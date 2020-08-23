@@ -1,0 +1,44 @@
+@import '../variables.scss';
+
+#search-component {
+    position: relative;
+    display: flex;
+    align-items: center;
+    @media screen and (max-width: 285px) {
+        display: none;
+    }
+    input  {
+        padding: 0 8px;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        width: 140px;
+        @media screen and (min-width: 601px){
+            width: 170px;
+        }
+        @media screen and (min-width: 768px){
+            width: 235px;
+            padding: 0 6px;
+            border-radius: 0;             
+        }
+        height: 38px;
+        &::placeholder {
+            font-size: 10px;
+            
+            @media screen and (min-width: 601px){
+                font-size: 12px          
+            }
+
+            @media screen and (min-width: 768px){
+                font-size: 14px          
+            }
+            
+            @media screen and (min-width: 1024px){
+                font-size: 16px          
+            }
+        }
+    }
+    .material-icons {
+        position: absolute; 
+        right: 5px;
+    }
+}

@@ -1,0 +1,151 @@
+@import '../variables.scss';
+
+#main-header {
+    background: #fff;
+    width: 100%;
+    position: relative;
+    height: 62px;
+    &::after {
+        content: ' ';
+        display: table;
+        clear: both;
+    }
+    #nav-header {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 62px;
+        background-color: $white;
+        z-index: 999;
+
+        #nav {
+            max-width:  1100px;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+
+        .nykaa-logo {
+            display: inline-block;
+            width: 80px;
+            @media screen and (min-width: 601px) {
+                width: 100px;
+            }
+            img {
+                height: 100%;
+            }
+        }
+        .menu-icon {
+            line-height: 62px;
+            margin: 0 3px;
+            @media screen and (min-width: 1024px) {
+                display: none;
+            }
+        }
+        ul {
+            list-style-type: none;
+            li {
+                float: left;
+                margin: 0 10px;
+                @media screen and (min-width: 1024px) {
+                    margin: 0 15px;
+                }
+                text-transform: uppercase; 
+                height: 62px;
+                line-height: 62px;
+                a {
+                    display: block;
+                }
+            }
+        }
+        .left-container {    
+            flex: 1;
+            ul {
+                @media screen and (max-width: 1024px) {
+                    display: none;
+                }
+            }
+            .offer {
+                color: $pink;
+            }
+        }
+        .right-container {
+            width: 65px;
+            display: none;
+            @media screen and (min-width: 768px) {
+                width: 215px;
+            }
+            @media screen and (min-width: 355px) {
+                display: block;
+            }
+            ul {
+                float: right;
+                li {
+                    @media screen and (max-width: 768px) {
+                        margin: 0 3px;
+                    }
+                    &.account-icon-container {
+                        display: none;
+                        @media screen and (min-width: 768px) {
+                            display: block;
+                        }
+                        a {
+                            margin-top: 8px;
+                            text-align: center;
+                        }
+                        div {
+                            height: initial;
+                            line-height: 24px;
+                        }
+                    }
+                    .more-icon {
+                        line-height: 62px;
+                        @media screen and (min-width: 1024px) {
+                            display: none;
+                        }
+                    }
+                }
+            }
+            .account-icon {
+                background: url('/static/images/menusprite.png') 3px -42px no-repeat;
+                display: inline-block;
+                width: 22px;
+                height: 20px;
+                line-height: 20px;
+                vertical-align: middle;
+            }
+            .cart-icon {
+                background: url('/static/images/menusprite.png') -39px -31px no-repeat;
+                display: inline-block;
+                width: 22px;
+                height: 26px;
+                line-height: 26px;
+                vertical-align: sub;
+            }
+        }
+    }
+}
+#sub-header {
+    border-top: 1px solid $grey;
+    border-bottom: 1px solid $grey;
+    display: none;
+    @media screen and (min-width: 1024px) {
+        display: block;
+    }
+    ul {
+        max-width: 1100px;
+        margin: 0 auto;
+        li {
+            display: inline-block;
+            a {
+                height: 50px;
+                line-height: 50px;
+                display: block;
+                margin: 0 10px;
+                &.active {
+                    color: $blue;
+                }
+            }
+        }
+    }
+}
